@@ -39,11 +39,7 @@
           "src": "/src/images/icons/fiw484x484.png",
           "type": "image/png",
           "sizes": "484x484"
-      },
-      {
-          "src": "/scr/images/htw-gebaeude-h.jpg",
-          "type": "image/png",
-          "sizes": "484x484"
       }
+      
     ]
   }
