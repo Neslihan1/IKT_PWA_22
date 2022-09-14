@@ -58,8 +58,15 @@
       </nav>
     </div>
     <main class="mdl-layout__content mat-typography">
-      <div id="create-post">
-        <form>
+      <form>
+        <div id="create-post">
+          <video id="player" autoplay></video>
+          <canvas id="canvas" width="320px" height="240px"></canvas>
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="capture-btn">Foto</button>
+          <div id="pick-image">
+              <h6>Bild auswählen</h6>
+              <input type="file" accept="image/*" id="image-picker">
+          </div>
           <div class="input-section mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
             <input class="mdl-textfield__input" type="text" id="title">
             <label class="mdl-textfield__label" for="title" name="title">Titel</label>
@@ -68,6 +75,12 @@
             <input class="mdl-textfield__input" type="text" id="location">
             <label class="mdl-textfield__label" for="location" name="location">Ort</label>
           </div>
+          <!-- 
+          <div class="input-section">
+            <button class="mdl-button mdl-js-button mdl-button--colored" type="button" id="location-btn">Location</button>
+            <div class="mdl-spinner mdl-js-spinner is-active" id="location-loader"></div>
+          </div>
+           -->
           <br>
           <div>
             <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-color--accent"
@@ -80,11 +93,12 @@
               <i class="material-icons">close</i>
             </button>
           </div>
-        </form>
-      </div>
-      <img src="/src/images/htw.jpg"
-           alt="HTW Wilhelminenhof"
-           class="main-image">
+        </div>
+      </form>
+      <img srcset="/src/images/htw-lg.jpg 1200w, 
+             /src/images/htw.jpg 900w,
+             /src/images/htw-sm.jpg 480w" 
+            src="/src/images/htw.jpg" alt="HTW Wilhelminenhof" class="main-image">
       <div class="page-content">
         <h5 class="text-center mdl-color-text--primary">HTW-Insta</h5>
         <div id="shared-moments"></div>

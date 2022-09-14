@@ -9,6 +9,7 @@
     "lang": "de-DE",
     "dir": "ltr",
     "orientation": "portrait-primary",
+    "theme-color": "#76B900",
     "icons": [
       {
           "src": "/src/images/icons/fiw48x48.png",
