@@ -1,29 +1,30 @@
 const express = require('express');
 const cors = require('cors');
-const routes = require('./routes');
-const mongoose = require('mongoose');
+const postsRoutes = require('./routes/posts.routes');
 require('dotenv').config();
+const mongoose = require('mongoose');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
-// enable cors for all requests
 app.use(cors());
-app.use('/', routes);
+app.use('/posts', postsRoutes)
 
 app.listen(PORT, (error) => {
-    if (error) {
-        console.log(error);
+    if(error) {
+        console.log(error)
     } else {
         console.log(`server running on http://localhost:${PORT}`);
     }
-});
+})
 
-//mongodb einbinden
-mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true });
+/* nicht relevant */
+mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true })
+.then(
+    () => console.log('connected to BD')
+).catch(
+    err => console.error(err, 'conncetion error')
+)
+
 const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', () => {
-    console.log('connected to DB');
-});
