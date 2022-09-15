@@ -17,6 +17,7 @@ let imageURI = '';
 let locationButton = document.querySelector('#location-btn');
 let locationLoader = document.querySelector('#location-loader');
 let fetchedLocation;
+let mapDiv = document.querySelector('.map');
 
 locationButton.addEventListener('click', event => {
   if(!('geolocation' in navigator)) {
@@ -142,6 +143,12 @@ function closeCreatePostModal() {
     canvasElement.style.display = 'none';
     locationButton.style.display = 'inline';
     locationLoader.style.display = 'none';
+    if(videoPlayer.srcObject) {
+      videoPlayer.srcObject.getVideoTracks().forEach( track => track.stop());
+  }
+  setTimeout( () => {
+      createPostArea.style.transform = 'translateY(100vH)';
+  }, 1);
 }
 
 shareImageButton.addEventListener('click', openCreatePostModal);
@@ -228,26 +235,53 @@ function sendDataToBackend() {
 }
 
 form.addEventListener('submit', event => {
-    event.preventDefault(); 
+  event.preventDefault(); // nicht absenden und neu laden
 
-    if (file == null) {
-        alert('Erst Foto aufnehmen!')
-        return;
-    }
-    if (titleInput.value.trim() === '' || locationInput.value.trim() === '') {
-        alert('Bitte Titel und Location angeben!')
-        return;
-    }
+  if (file == null) {
+      alert('Erst Foto aufnehmen!')
+      return;
+  }
+  if (titleInput.value.trim() === '' || locationInput.value.trim() === '') {
+      alert('Bitte Titel und Location angeben!')
+      return;
+  }
 
-    closeCreatePostModal();
+  closeCreatePostModal();
 
-    titleValue = titleInput.value;
-    locationValue = locationInput.value;
-    console.log('titleInput', titleValue)
-    console.log('locationInput', locationValue)
-    console.log('file', file)
+  titleValue = titleInput.value;
+  locationValue = locationInput.value;
+  console.log('titleInput', titleValue)
+  console.log('locationInput', locationValue)
+  console.log('file', file)
 
-    sendDataToBackend();
+  
+  if('serviceWorker' in navigator && 'SyncManager' in window) {
+    navigator.serviceWorker.ready
+        .then( sw => {
+          //Daten in IndexedDB speichern
+          let post = {
+            id: new Date().toISOString(),
+            title: titleValue,
+            location: locationValue,
+            image_id: file      // file durch den Foto-Button belegt
+        };
+        //posts-store in indexeddb
+        writeData('sync-posts', post)
+        .then( () => {
+
+          return sw.sync.register('sync-new-post');
+
+        })
+
+        then( () => {
+          let snackbarContainer = new MaterialSnackbar(document.querySelector('#confirmation-toast'));
+          let data = { message: 'Eingaben zum Synchronisieren gespeichert!', timeout: 2000};
+          snackbarContainer.showSnackbar(data);
+        });
+      });
+} else {
+  sendDataToBackend();
+}
 });
 
 captureButton.addEventListener('click', event => {

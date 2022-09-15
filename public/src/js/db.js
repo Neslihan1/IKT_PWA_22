@@ -1,11 +1,16 @@
 const db = idb.openDB('posts-store', 1, {
     upgrade(db) {
-        const store = db.createObjectStore('posts', {
+        const store1 = db.createObjectStore('posts', {
             keyPath: '_id',
-           autoIncrement: true,
+       
         });
        
         store.createIndex('_id', '_id');
+
+        const store2 = db.createObjectStore('sync-posts', {
+            keyPath: 'id',
+        });
+        store2.createIndex('id', 'id');
     },
 });
 
