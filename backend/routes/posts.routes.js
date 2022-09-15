@@ -51,11 +51,13 @@ function getOnePost(id) {
                     }
 
                     let base64file = 'data:' + docs[0].contentType + ';base64,' + fileData.join('');
+                    console.log("foto fertig...");
                     let getPost = new Post({
                         "title": post.title,
                         "location": post.location, 
                         "image_id": base64file
                     });
+                    console.log("lesen fertig...");
 
                     resolve(getPost)
                 })
@@ -111,7 +113,7 @@ router.get('/', async(req, res) => {
     .catch( () => {
         res.status(404);
         res.send({
-            error: "Post do not exist!"
+            error: "Post do not exist! (route: /posts)"
         });
     })
 });
