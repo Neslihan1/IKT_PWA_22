@@ -1,9 +1,35 @@
+//import webpush from 'web-push';
+
+
 const express = require('express');
 const router = express.Router();
 const Post = require('../models/posts')
 const upload = require('../middleware/upload')
 const mongoose = require('mongoose')
 require('dotenv').config()
+
+
+const publicVapidKey = 'BNeJM8v7Wcxz1mSJXBca9T3DdlMQ8cG';
+const privateVapidKey = 'D1PqjXHmJ9H2_R06jlhVTiU2b9Kywxt';
+const pushSubscription = {
+    endpoint: 'https://fcm.googleapis.com/fcm/send/cMdUtRW4H9o:APA91bG8p3o-Ta31e1yMrqdvonJCyf3xbPfIFtpS2UbX9PcJwkeNKoQjZhEAWo5nad7eR3NgRQR8__3wk591j7DKWJLGzwWgJYm_GgipU0gTvMRpWA6TpmCtrD9OCo1mB0jZQrTj5a_5',
+    keys: {
+        auth: 'fJRvyO_fnPXsYeDkMy_jAA',
+        p256dh: 'BDhH_TBG4l-PU3wJnT6wHqsPeYusbPqOiw7VvJvupXDC3JZOIIOiz2Ml8ZaZD9wJuGnXs9BFqINEzrFStsjkk6c',
+    }
+};
+
+function sendNotification() {
+    webpush.setVapidDetails('mailto:Neslihan.Kilic@Student.htw-berlin.de', publicVapidKey, privateVapidKey);
+    const payload = JSON.stringify({
+        title: 'New Push Notification',
+        content: 'New data in database!'
+    });
+    webpush.sendNotification(pushSubscription,payload)
+        .catch(err => console.error(err));
+    console.log('push notification sent');
+
+}
 
 
 
