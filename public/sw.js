@@ -1,5 +1,6 @@
 importScripts('/src/js/idb.js');
 importScripts('/src/js/db.js');
+//importScripts('/scr/js/material.min.js');
 
 const CACHE_VERSION = 12;
 const CURRENT_STATIC_CACHE = 'static-v'+CACHE_VERSION;

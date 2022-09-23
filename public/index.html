@@ -8,12 +8,16 @@
   <title>IKT-PWA</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue_grey-red.min.css">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.light_blue-indigo.min.css">
+  
+                               <!--https://code.getmdl.io/1.3.0/material.blue_grey-red.min.css">-->
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.14.1/css/ol.css" type="text/css">
   <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.14.1/build/ol.js"></script>
   <link rel="stylesheet" href="/src/css/app.css">
   <link rel="stylesheet" href="/src/css/feed.css">
-  <link rel="manifest" href="manifest.webmanifest">
+  <!--<link rel="manifest" href="manifest.webmanifest">-->
+  <link rel="manifest" href="manifest.json">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="HTW-Insta">
@@ -36,8 +40,16 @@
       <div class="mdl-layout__header-row">
         <span class="mdl-layout-title">IKT-PWA</span>
         <div class="mdl-layout-spacer"></div>
-        <nav class="mdl-navigation mdl-layout--large-screen-only">
+        
+
+      <nav class="mdl-navigation mdl-layout--large-screen-only">
+        <a class="mdl-navigation__link" href="/europa">Europa</a>
+        <a class="mdl-navigation__link" href="/afrika">Afrika</a>
+        <a class="mdl-navigation__link" href="/amerika">Amerika</a>
+        <a class="mdl-navigation__link" href="/asien">Asien</a>
+        <a class="mdl-navigation__link" href="/australien">Australien</a>
           <a class="mdl-navigation__link" href="/">Bilder</a>
+          <a class="mdl-navigation__link" href="/archiv">Archiv</a>
           <a class="mdl-navigation__link" href="/help">Hilfe</a>
           <div class="drawer-option">
             <button class="enable-notifications mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-color--accent">
@@ -47,10 +59,18 @@
         </nav>
       </div>
     </header>
-    <div class="mdl-layout__drawer">
+   
+      <div class="mdl-layout__drawer">
+
       <span class="mdl-layout-title">IKT-PWA</span>
       <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" href="/europa">Europa</a>
+        <a class="mdl-navigation__link" href="/afrika">Afrika</a>
+        <a class="mdl-navigation__link" href="/amerika">Amerika</a>
+        <a class="mdl-navigation__link" href="/asien">Asien</a>
+        <a class="mdl-navigation__link" href="/australien">Australien</a>
         <a class="mdl-navigation__link" href="/">Bilder</a>
+        <a class="mdl-navigation__link" href="/archiv">Archiv</a>
         <a class="mdl-navigation__link" href="/help">Hilfe</a>
         <div class="drawer-option">
           <button class="enable-notifications mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-color--accent">
@@ -105,12 +125,18 @@
 
         </div>
       </form>
-      <img srcset="/src/images/htw-lg.jpg 1200w, 
-             /src/images/htw.jpg 900w,
-             /src/images/htw-sm.jpg 480w" 
-            src="/src/images/htw.jpg" alt="HTW Wilhelminenhof" class="main-image">
+      <img srcset="/src/images/PandaTravelpinkblue.png 1200w, 
+
+
+         
+        /src/images/PandaTravelpinkblue.png 900w,
+      
+        /src/images/PandaTravelpinkblue.png 480w" 
+
+            src="/src/images/PandaTravelpinkblue.png" alt="HTW Wilhelminenhof" class="main-image">
       <div class="page-content">
-        <h5 class="text-center mdl-color-text--primary">HTW-Insta</h5>
+        <h4 class="text-center mdl-color-text--primary">Top 10 der meistbesuchten Länder der Welt 2022</h4>
+      
         <div id="shared-moments"></div>
       </div>
       <div class="floating-button">
@@ -122,11 +148,19 @@
       <div id="confirmation-toast" aria-live="assertive" aria-atomic="true" aria-relevant="text" class="mdl-snackbar mdl-js-snackbar">
         <div class="mdl-snackbar__text"></div>
         <button type="button" class="mdl-snackbar__action"></button>
+
+        
+        <a class="mdl-footer__link" href="https://victor-mochere.com/de/top-20-most-visited-countries-in-the-world">Quelle</a>
+        
+       
+
       </div>
     </main>
   </div>
 </div>
 <script defer src="/src/js/material.min.js"></script>
+
+<!--<script scr="/scr/js/material.min.js"></script>-->
 <script src="/src/js/idb.js"></script>
 <script src="/src/js/db.js"></script>
 <script src="/src/js/app.js"></script>

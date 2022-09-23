@@ -1,9 +1,10 @@
 sendNotification: () => {
-    webpush.setVapidDetails('mailto:freiheit@htw-berlin.de', publicVapidKey, privateVapidKey);
+    webpush.setVapidDetails('mailto:Neslihan.Kilic@Student.HTW-Berlin.de', publicVapidKey, privateVapidKey);
     const payload = JSON.stringify({
         title: 'New Push Notification',
         content: 'New data in database!',
-        openUrl: '/help'
+        openUrl: '/help',
+        openUrl: '/archiv'
     });
     webpush.sendNotification(pushSubscription,payload)
         .catch(err => console.error(err));
