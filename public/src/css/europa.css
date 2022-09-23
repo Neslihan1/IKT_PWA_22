@@ -3,15 +3,17 @@
   }
 
 
-  .mdl-spinner {
+
+.mdl-spinner {
     margin: auto;
 }
 
 .main-image {
-
+  max-width: 100%;
   margin: auto;
   display: block;
 }
+
 
 .shared-moment-card.mdl-card {
     margin: 10px auto;
