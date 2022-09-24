@@ -200,7 +200,7 @@ self.addEventListener('fetch', event => {
                                 
                                     let options = {
                                         body: data.content,
-                                        icon: '/src/images/icons/fiw96x96.png',
+                                        icon: '/src/images/icons/favicon-96x96.png',
                                         data: {
                                             url: data.openUrl
                                         }
