@@ -1,45 +1,45 @@
 {
-    "name": "HTW-Insta Erweiterung",
-    "short_name": "HTW-Insta",
+    "name": "TravalPanda-App",
+    "short_name": "TravalPanda",
     "start_url": "/index.html",
     "id": "/index.html",
     "display": "standalone",
-    "background_color": "#76B900",
-    "description": "Eine tolle HTW-Insta-PWA",
+    "background_color": "#00aae7",
+    "description": "Reise Panda App",
     "lang": "de-DE",
     "dir": "ltr",
     "orientation": "portrait-primary",
-    "theme-color": "#76B900",
+    "theme-color": "#7dd7f8",
     "icons": [
       {
-          "src": "/src/images/icons/fiw48x48.png",
+          "src": "/src/images/icons/apple-icon-57x57.png",
           "type": "image/png",
-          "sizes": "48x48"
+          "sizes": "57x57"
       },
       {
-          "src": "/src/images/icons/fiw72x72.png",
+          "src": "/src/images/icons/apple-icon-72x72.png",
           "type": "image/png",
           "sizes": "72x72"
       },
       {
-          "src": "/src/images/icons/fiw96x96.png",
+          "src": "/src/images/icons/favicon-96x96.png",
           "type": "image/png",
           "sizes": "96x96"
       },
       {
-          "src": "/src/images/icons/fiw128x128.png",
+          "src": "/src/images/icons/apple-icon-120x120.png",
           "type": "image/png",
-          "sizes": "128x128"
+          "sizes": "120x120"
       },
       {
-          "src": "/src/images/icons/fiw256x256.png",
+          "src": "/src/images/icons/favicon-256x256.png",
           "type": "image/png",
           "sizes": "256x256"
       },
       {
-          "src": "/src/images/icons/fiw484x484.png",
+          "src": "/src/images/icons/ms-icon-310x310.png",
           "type": "image/png",
-          "sizes": "484x484"
+          "sizes": "310x310"
       }
       
     ]

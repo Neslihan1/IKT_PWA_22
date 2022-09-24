@@ -5,15 +5,26 @@
   <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Help</title>
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+  <title>Hilfe</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet"
-        href="https://code.getmdl.io/1.3.0/material.light_blue-indigo.min.css">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.light_blue-indigo.min.css">
         
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+  
+
+  
+
+
              <!-- https://code.getmdl.io/1.3.0/material.blue_grey-red.min.css">-->
   <link rel="stylesheet" href="/src/css/help.css">
-  <link rel="manifest" href="../manifest.json">
+  <link rel="stylesheet" href="/src/css/app.css">
+  <link rel="stylesheet" href="/src/css/Feed.css">
+  <link rel="manifest"   href="../manifest.json">
 
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -28,6 +39,9 @@
 <link rel="apple-touch-icon" href="/src/images/icons/ios-fiw152x152.png" sizes="152x152">
 <link rel="apple-touch-icon" href="/src/images/icons/ios-fiw180x180.png" sizes="180x180">
 
+
+
+
 </head>
 <body>
 
@@ -41,8 +55,13 @@
         <div class="mdl-layout-spacer"></div>
         <!-- Navigation. We hide it in small screens. -->
         <nav class="mdl-navigation mdl-layout--large-screen-only">
-          <a class="mdl-navigation__link" href="/">Bilder</a>
-          <a class="mdl-navigation__link" href="/settings">Einstellungen</a>
+          <a class="mdl-navigation__link" href="/europa">Europa</a>
+          <a class="mdl-navigation__link" href="/afrika">Afrika</a>
+          <a class="mdl-navigation__link" href="/amerika">Amerika</a>
+          <a class="mdl-navigation__link" href="/asien">Asien</a>
+          <a class="mdl-navigation__link" href="/australien">Australien</a>
+          <a class="mdl-navigation__link" href="/archiv">Archiv</a>
+          <a class="mdl-navigation__link" href="/help">Hilfe</a>
           <div class="drawer-option">
             <button class="enable-notifications mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-color--accent">
               Benachrichtigungen Ein
@@ -55,7 +74,13 @@
       <span class="mdl-layout-title">IKT-PWA</span>
       <nav class="mdl-navigation">
         <a class="mdl-navigation__link" href="/">Feed</a>
-        <a class="mdl-navigation__link" href="/help">Help</a>
+        <a class="mdl-navigation__link" href="/europa">Europa</a>
+        <a class="mdl-navigation__link" href="/afrika">Afrika</a>
+        <a class="mdl-navigation__link" href="/amerika">Amerika</a>
+        <a class="mdl-navigation__link" href="/asien">Asien</a>
+        <a class="mdl-navigation__link" href="/australien">Australien</a>
+        <a class="mdl-navigation__link" href="/archiv">Archiv</a>
+        <a class="mdl-navigation__link" href="/help">Hilfe</a>
         <div class="drawer-option">
           <button class="enable-notifications mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-color--accent">
             Benachrichtigungen Ein
@@ -66,30 +91,38 @@
     <main class="mdl-layout__content mat-typography">
       <div class="mdl-grid">
         <div class="mdl-cell mdl-cell--12-col text-center">
-         <h3>Brauchst Du Hilfe?</h3>
-          <p>Hier erfährst Du, wie Du die App benutzen und neue Bildeinträge erstellen kannst.</p>
-        </div>
-      </div>
-      <div class="mdl-grid">
-        <div class="mdl-cell mdl-cell--12-col text-center">
-          <h3>Kontakt</h3>
-          <div>
-            <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
-              <i class="material-icons">call</i>
-            </button>
-            <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
-              <i class="material-icons">email</i>
-            </button>
-            <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
-              <i class="material-icons">chat_bubble</i>
-            </button>
-          </div>
+          <h3 class="text-center mdl-color-text--primary">Hilfe</h3>
+          <p> Brauchst du hilfe? Schreibe uns gerne eine Email.</p>
+          <div class="page-content">
+
+          <div class="container">
+            <form>
+                
+                <label for="name" class="name-label">Name:</label>
+                <input id="name" type="text" placeholder="face"/>
+                
+                <label for="favorite" class="favorite-label">Anliegen:</label>
+                <input id="favorite" type="text" placeholder="favorite"/>
+                
+                <label for="email" class="email-label">Email:</label>
+                <input id="email" type="email" placeholder="email"/>
+                
+                <button type="submit">Send</button>
+            
+            <!--<a button type="submit" href="/mailto:Neslihan.Kilic@Student.HTW-Berlin.de">Senden</a>-->
+
+           <!-- <button type="submit">Senden <link href="mailto:Neslihan.Kilic@Student.HTW-Berlin.de"> </button>-->
+          
+        </form>
+      </div>  
+    </div>
         </div>
       </div>
     </main>
   </div>
 </div>
 
+</div>
 <script defer src="/src/js/material.min.js"></script>
 <!--<script scr="/scr/js/material.min.js"></script>-->
 <script src="/src/js/app.js"></script>
