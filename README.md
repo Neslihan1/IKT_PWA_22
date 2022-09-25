@@ -50,4 +50,6 @@ Sie können natürlich auch ein anderes Bild als das HTW-Bild einbinden. Beachte
 
 Binden Sie ruhig Ihr eigenes `favicon.ico` in den Projektordner ein. Erstellen können Sie sich ein solches `favicon` z.B. [hier](https://favicon.io/) oder [hier](https://www.ionos.de/tools/favicon-generator). Macht Spaß und gibt allen Ihren Webanwendungen eine persönliche Note ;-).
 
- 
+ ## App
+
+ Die App TravelPanda kann neue Blockeinträge verfassen. Nach dem klick von dem + Button, wird man auf den Kamera und Location Zugriff gefragt. Wenn man den Kamerazugriff verweigert kommt ein File Picker, wo man selbst ein Bild hochladen kann. Zugleich erscheint eine Benachrichtigung.Die App ist installierbar und offline nutzbar.Es besitzt ein responsives Frontend und ein backend. Als Datenbak ist MongoDB Compass verbunden.Und es verwendet die IndexDB, Gelocation API,Hintergrundsynchronation und die Push-Nachrichten.
