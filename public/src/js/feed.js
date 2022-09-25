@@ -2,9 +2,11 @@ let shareImageButton = document.querySelector('#share-image-button');
 let createPostArea = document.querySelector('#create-post');
 let closeCreatePostModalButton = document.querySelector('#close-create-post-modal-btn');
 let sharedMomentsArea = document.querySelector('#shared-moments');
+//Verbindung Post Kamera
 let form = document.querySelector('form');
 let titleInput = document.querySelector('#title');
 let locationInput = document.querySelector('#location');
+//Kamerazugriff
 let videoPlayer = document.querySelector('#player');
 let canvasElement = document.querySelector('#canvas');
 let captureButton = document.querySelector('#capture-btn');
@@ -119,7 +121,7 @@ function initializeMedia() {
             })
         }
     }
-
+    //Zugriff zur Kamera
     navigator.mediaDevices.getUserMedia({video: true})
     .then( stream => {
         videoPlayer.srcObject = stream;
@@ -131,11 +133,14 @@ function initializeMedia() {
 }
 
 function openCreatePostModal() {
-    createPostArea.style.transform = 'translateY(0)';
+    setTimeout( () => {
+        createPostArea.style.transform = 'translateY(0)';
+    }, 1);
+   // createPostArea.style.transform = 'translateY(0)';
     initializeMedia();
     initializeLocation();
 }
-
+//File Picker, wenn Kamerazugriff verweigert
 function closeCreatePostModal() {
     createPostArea.style.transform = 'translateY(100vH)';
     imagePickerArea.style.display = 'none';
@@ -206,7 +211,7 @@ function updateUI(data) {
        createCard(card);
     }
 }
-
+//Bild im Backend speichern
 function sendDataToBackend() {
     const formData = new FormData();
     formData.append('title', titleValue);
@@ -234,8 +239,14 @@ function sendDataToBackend() {
     });
 }
 
+//Bild hochladen
+imagePicker.addEventListener('change', event => {
+    file = event.target.files[0];
+});
+
+
 form.addEventListener('submit', event => {
-  event.preventDefault(); // nicht absenden und neu laden
+  event.preventDefault(); 
 
   if (file == null) {
       alert('Erst Foto aufnehmen!')
@@ -283,7 +294,7 @@ form.addEventListener('submit', event => {
   sendDataToBackend();
 }
 });
-
+//Click Ereignis von Kamerabutton
 captureButton.addEventListener('click', event => {
     event.preventDefault(); 
     canvasElement.style.display = 'block';

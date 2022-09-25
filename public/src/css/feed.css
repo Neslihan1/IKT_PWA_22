@@ -6,9 +6,9 @@
   overflow-y: scroll;
   bottom: 0;
   top: 56px;
-  background: white;
+  background: pink;
   text-align: center;
-  /* visibility: hidden; */
+
   transform: translateY(100vH);
   transition: transform 0.3s;
 }
