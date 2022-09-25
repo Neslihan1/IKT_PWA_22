@@ -9,8 +9,8 @@ const mongoose = require('mongoose')
 require('dotenv').config()
 
 
-const publicVapidKey = 'BNeJM8v7Wcxz1mSJXBca9T3DdlMQ8cG';
-const privateVapidKey = 'D1PqjXHmJ9H2_R06jlhVTiU2b9Kywxt';
+const publicVapidKey = 'BLp3BGxSyYIv3rfy07KC-saKtiCVI073LWw5Eh24gHoRGV7hhT1kVwo6gnhjrUszZguRy8b9lGroKNRy9iCUcCI';
+const privateVapidKey = '9HPDFyx8Xd3lu2ctDHGdf3TNSjDUU2nsAuwwLe2d_6A';
 const pushSubscription = {
     endpoint: 'https://fcm.googleapis.com/fcm/send/cMdUtRW4H9o:APA91bG8p3o-Ta31e1yMrqdvonJCyf3xbPfIFtpS2UbX9PcJwkeNKoQjZhEAWo5nad7eR3NgRQR8__3wk591j7DKWJLGzwWgJYm_GgipU0gTvMRpWA6TpmCtrD9OCo1mB0jZQrTj5a_5',
     keys: {
@@ -66,7 +66,7 @@ function getOnePost(id) {
 
             collectionFiles.find({filename: fileName}).toArray( async(err, docs) => {
 
-                // sort({n: 1}) --> die chunks nach Eigenschaft n aufsteigend sortieren
+                //  chunks nach Eigenschaft n aufsteigend sortieren
                 collectionChunks.find({files_id : docs[0]._id}).sort({n: 1}).toArray( (err, chunks) => {
 
                     const fileData = [];
@@ -88,7 +88,7 @@ function getOnePost(id) {
                     resolve(getPost)
                 })
 
-            }) // toArray find filename
+            }) 
 
         } catch {
             reject(new Error("Post does not exist!"));
