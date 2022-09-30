@@ -2,6 +2,17 @@ importScripts('/src/js/idb.js');
 importScripts('/src/js/db.js');
 //importScripts('/scr/js/material.min.js');
 
+//
+//importScripts(
+//    'https://storage.googleapis.com/workbox-cdn/releases/6.4.1/workbox-sw.js'
+//  );
+//  
+//  workbox.routing.registerRoute(
+//      ({request}) => request.destination === 'image',
+//      new workbox.strategies.NetworkFirst()     // NetworkFirst() vs CacheFirst()
+//  )
+
+
 const CACHE_VERSION = 12;
 const CURRENT_STATIC_CACHE = 'static-v'+CACHE_VERSION;
 const CURRENT_DYNAMIC_CACHE = 'dynamic-v'+CACHE_VERSION;
@@ -30,6 +41,23 @@ self.addEventListener('install', event => {
     );
 })
 
+//const db = idb.openDB('posts-store', 1, {
+//    upgrade(db) {
+//        // Create a store of objects
+//        const store = db.createObjectStore('posts', {
+            // The '_id' property of the object will be the key.
+//            keyPath: '_id',
+            // If it isn't explicitly set, create a value by auto incrementing.
+  //          autoIncrement: true,
+//        });
+        // Create an index on the '_id' property of the objects.
+//        store.createIndex('_id', '_id');
+//    },
+//});
+
+
+
+
 self.addEventListener('activate', event => {
     console.log('service worker --> activating ...', event);
     event.waitUntil(
@@ -49,6 +77,7 @@ self.addEventListener('activate', event => {
 self.addEventListener('fetch', event => {
     if (!event.request.url.includes('http')) return;        // skip the request. if request is not made with http protocol
     if (event.request.url.includes('myFile.jpg')) return;   // skip the request. see feed.js fetch(imageURI)
+     
 
     const url = 'http://localhost:3000/posts';
     if(event.request.url.indexOf(url) >= 0) {
@@ -57,13 +86,17 @@ self.addEventListener('fetch', event => {
             fetch(event.request)
                 .then ( res => {
                     if(event.request.method === 'GET') {
+                       //Anfrage an das Backend 
                         const clonedResponse = res.clone();
+                        //von db.js(löscht Dten in DB)
                         clearAllData('posts')
                         .then( () => {
+
                             clonedResponse.json()
                             .then( data => {
                                 for(let key in data)
                                 {
+                                    //IndexDB post
                                     writeData('posts', data[key]);
                                 }
                             })

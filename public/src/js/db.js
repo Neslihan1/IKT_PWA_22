@@ -32,7 +32,7 @@ function readAllData(st) {
             return store.getAll();
         })
 }
-
+//löscht Daten ind DB
 function clearAllData(st) {
     return db
         .then( dbPosts => {

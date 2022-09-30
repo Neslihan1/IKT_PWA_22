@@ -1,26 +1,25 @@
 # Progressive Web Apps - Aktuelle Trends der IKT 2022
 
-Dieses Projekt enthält das Grundgerüst einer Webanwendung. Auf diesem Grundgerüst bauen wir auf und fügen sukzessive *progressive* Funktionalitäten hinzu, so dass am Ende eine *Progressive Web Application* entsteht. 
+Dieses Projekt enthält die Semesteraufgabe des Moduls "Aktuelle Trends der IKT 2022". Durch die zur verfügung gestellten Grundgerüst wurden die Funktionalitäten angepasst und eingefügt, so dass am Ende eine *Progressive Web Application* entstand. 
 
 ## Installation
 
-- Zum Ausführen des Projektes wird [Node.js](https://nodejs.org) verendet. Sie müssen es auf Ihren Rechner installieren. 
+- Zum Ausführen des Projektes wird [Node.js](https://nodejs.org) verwendet. Es muss es auf dem Rechner installiert werden. 
 
-- In der Wahl Ihrer IDE sind Sie völlig frei. Empfehlungen finden Sie unter [https://freiheit.f4.htw-berlin.de/ikt/tools/#integrated-development-environment-ide](https://freiheit.f4.htw-berlin.de/ikt/tools/#integrated-development-environment-ide)
+- In der Wahl der IDE ist es dem Entwickler überlassen. Die App wurde mit "Visual Studio code" umgesetzt.
 
-- Zum Starten des Projektes wechseln Sie im Terminal (Terminal Ihres Rechners oder das Terminal in der IDE) in den Projektordner (`cd IKT-PWA-01`) und führen dort 
+- Zum Starten des Projektes wechsle in Terminal des Rechners oder in den Projektordner in den Projektordner (`cd IKT-PWA-22`) und führen dort 
 
 	`npm install` 
 
 	aus (es genügt auch `npm i`). Damit werden alle erforderlichen Abhängigkeiten installiert. Es entsteht der `node_modules`-Ordner. 
 
-- Nach erfolgreicher Installation der Abhängigkeiten, geben Sie  
+- Um den Projekt zu starten, gebe den Befehl
 
 	`npm start` 
+    ein.  Klicke danach auf [localhost:8080](http://localhost:8080) oder gebe die URL direkt in Ihren Browser ein.
 
-	ein, um Ihr Projekt auszuführen (Es wird der `http-server` mit der Option `-c-1` gestartet. Diese Option disabled Caching). Klicken Sie danach auf [localhost:8080](http://localhost:8080) oder geben Sie die URL direkt in Ihren Browser ein.
-
-- Sollten Sie Änderungen an der IMplementierung vornehmen und diese ausprobieren wollen, müssen Sie den Server zunächst wieder stoppen:
+- Sollte man die Änderungen an der Implementierung vornehmen und diese ausprobieren wollen, muss man den Server zunächst wieder stoppen:
 
 	`Ctrl-C`
 
@@ -32,11 +31,9 @@ Dieses Projekt enthält das Grundgerüst einer Webanwendung. Auf diesem Grundger
 
 ## Anpassungen
 
-Wir verwenden [Material Design Lite](https://getmdl.io/) für das Design unserer Anwendung. Sie können natürlich auch andere CSS-Frameworks verwenden. Sollte Ihnen die aktuelle Farbkombination aus `blue-grey` und `red` nicht zusagen, können Sie in den `index.html`-Datein (im `public`- und im `public/help`-Ordner auch eine andere Kombination auswählen (siehe
+Für das Design der Anwendung wurde [Material Design Lite](https://getmdl.io/) verwendet . Man kann natürlich auch andere CSS-Frameworks verwenden. 
 
-`href="https://code.getmdl.io/1.3.0/material.blue_grey-red.min.css"`
-
-Andere Farbkombinationen finden Sie [hier](https://getmdl.io/customize/#cdn-code). Es genügt auch, die entsprechenden Farben in den Dateinamen einzutragen 
+Für die Farbkombinationen findet man [hier](https://getmdl.io/customize/#cdn-code). Es genügt auch, die entsprechenden Farben in den Dateinamen einzutragen 
 
 `material.{primary}-{accent}.min.css` 
 
@@ -44,12 +41,14 @@ Andere Farbkombinationen finden Sie [hier](https://getmdl.io/customize/#cdn-code
 
 --
 
-Sie können natürlich auch ein anderes Bild als das HTW-Bild einbinden. Beachten Sie dabei nur, dass wir mithilfe responsiven Verhaltens drei verschiedene Bilder davon benötigen, idealerweise mit den Pixel-Maßen `1200 x 457` (`*-lg.jpg`), `900 x 343` (`*.jpg`) und `480 x 183` (`*-sm.jpg`). Siehe dann die `public/index.html`.
-
+Man kann natürlich auch ein anderes Bild als ins Titel einbinden.Es sollte beachtet werden , dass mithilfe responsiven Verhaltens drei verschiedene Bilder davon benötigen, idealerweise mit den Pixel-Maßen `1200 x 457` (`*-lg.jpg`), `900 x 343` (`*.jpg`) und `480 x 183` (`*-sm.jpg`). 
 --
 
-Binden Sie ruhig Ihr eigenes `favicon.ico` in den Projektordner ein. Erstellen können Sie sich ein solches `favicon` z.B. [hier](https://favicon.io/) oder [hier](https://www.ionos.de/tools/favicon-generator). Macht Spaß und gibt allen Ihren Webanwendungen eine persönliche Note ;-).
+Auch das eigene `favicon.ico` in den Projektordner ein kann man einbinden. Erstellen kann man sich ein solches `favicon` z.B. [hier]
+(https://favicon.io/) oder [hier](https://www.ionos.de/tools/favicon-generator). 
+
+
 
  ## App
 
- Die App TravelPanda kann neue Blockeinträge verfassen. Nach dem klick von dem + Button, wird man auf den Kamera und Location Zugriff gefragt. Wenn man den Kamerazugriff verweigert kommt ein File Picker, wo man selbst ein Bild hochladen kann. Zugleich erscheint eine Benachrichtigung.Die App ist installierbar und offline nutzbar.Es besitzt ein responsives Frontend und ein backend. Als Datenbak ist MongoDB Compass verbunden.Und es verwendet die IndexDB, Gelocation API,Hintergrundsynchronation und die Push-Nachrichten.
+Die App TravelPanda kann neue Blockeinträge verfassen. Nach dem klick von dem `+` Button, wird man auf den Kamera und Location Zugriff gefragt. Wenn man den Kamerazugriff verweigert kommt ein File Picker, wo man selbst ein Bild hochladen kann. Zugleich erscheint eine Benachrichtigung.Die App ist installierbar und offline nutzbar.Es besitzt ein responsives Frontend und ein backend. Als Datenbak ist MongoDB Compass verbunden.Und es verwendet die IndexDB, Gelocation API,Hintergrundsynchronation und die Push-Nachrichten.

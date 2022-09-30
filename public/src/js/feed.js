@@ -21,6 +21,7 @@ let locationLoader = document.querySelector('#location-loader');
 let fetchedLocation;
 let mapDiv = document.querySelector('.map');
 
+//Geolocation
 locationButton.addEventListener('click', event => {
   if(!('geolocation' in navigator)) {
       return;
@@ -40,6 +41,7 @@ locationButton.addEventListener('click', event => {
       nominatimURL += '&lat=' + fetchedLocation.latitude;
       nominatimURL += '&lon=' + fetchedLocation.longitude;
 
+      //fetchLocation 
       fetch(nominatimURL)
       .then((res) => {
           console.log('nominatim res ...', res);
@@ -185,6 +187,7 @@ function createCard(card) {
   sharedMomentsArea.appendChild(cardWrapper);
 }
 
+//readAllData aus sw.js (IndexDB)
 fetch('http://localhost:3000/posts')
     .then((res) => {
         return res.json();
@@ -193,6 +196,7 @@ fetch('http://localhost:3000/posts')
         console.log('From backend ...', data);
         updateUI(data);
     })
+
     .catch( (err) => {
         if('indexedDB' in window) {
             readAllData('posts')
@@ -283,8 +287,8 @@ form.addEventListener('submit', event => {
           return sw.sync.register('sync-new-post');
 
         })
-
-        then( () => {
+       //von index.html
+        .then( () => {
           let snackbarContainer = new MaterialSnackbar(document.querySelector('#confirmation-toast'));
           let data = { message: 'Eingaben zum Synchronisieren gespeichert!', timeout: 2000};
           snackbarContainer.showSnackbar(data);
